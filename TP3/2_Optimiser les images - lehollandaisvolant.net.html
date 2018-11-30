@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://lehollandaisvolant.net/tuto/html.php -->
+<html lang="fr-fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="Author" content="Timo van Neerden">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<link type="text/css" title="one" rel="stylesheet" href="./Optimiser les images - lehollandaisvolant.net_files/cascades_6.css">
+
+	<title>Optimiser les images - lehollandaisvolant.net</title>
+	<style type="text/css">
+	body { counter-reset: countH2; }
+h2 {
+	counter-reset: countH3;
+	counter-increment: countH2;
+}
+h3 {
+	counter-reset: countH4;
+	counter-increment: countH3;
+}
+h4 {
+	counter-reset: countH5;
+	counter-increment: countH4;
+}
+h5 {
+	counter-reset: countH6;
+	counter-increment: countH5;
+}
+h6 {
+	counter-increment: countH6;
+}
+
+h2:before { content: counter(countH2) " - "; }
+h3:before { content: counter(countH2) "." counter(countH3) " - "; }
+h4:before { content: counter(countH2) "." counter(countH3) "." counter(countH4) " - "; }
+h5:before { content: counter(countH2) "." counter(countH3) "." counter(countH4) "." counter(countH5) " - "; }
+h6:before { content: counter(countH2) "." counter(countH3) "." counter(countH4) "." counter(countH5) "." counter(countH6) " - "; }
+	#sommaire2,
+#toc {
+	counter-reset: nav0;
+	list-style-type: none;
+}
+#sommaire2 > li:before,
+#toc > li:before {
+	counter-increment: nav0;
+	content: counter(nav0)" - ";
+}
+#sommaire2 > li,
+#toc > li {
+	counter-reset: nav1;
+}
+#sommaire2 > li > ul > li:before,
+#toc > li > ul > li:before {
+	counter-increment: nav1;
+	content:counter(nav0)"."counter(nav1) " - ";
+}
+#sommaire2 > li > ul > li,
+#toc > li > ul > li {
+	counter-reset: nav2;
+}
+#sommaire2 > li > ul > li > ul > li:before,
+#toc > li > ul > li > ul > li:before {
+	counter-increment: nav2;
+	content:counter(nav0)"."counter(nav1)"."counter(nav2)" - ";
+}
+#sommaire2 > li > ul > li > ul > li,
+#toc > li > ul > li > ul > li {
+	counter-reset: nav3;
+}
+
+#sommaire2 > li > ul > li > ul > li > ul > li:before,
+#toc > li > ul > li > ul > li > ul > li:before {
+	counter-increment: nav3;
+	content:counter(nav0)"."counter(nav1)"."counter(nav2)"."counter(nav3)" - ";
+}
+
+
+#sommaire2 ul,
+#toc ul {
+	margin-left: 0px;
+	list-style-type: none;
+	margin-bottom: 10px;
+}
+
+#sommaire {
+	color: #f00;
+	font-size:1.9em;
+}
+
+
+
+
+</style>
+</head>
+<body>
+<!-- menu 5 -->
+<nav id="top-nav">
+	<div class="home">
+		<a title="Accueil" class="logo" href="https://lehollandaisvolant.net/">
+		<img src="./Optimiser les images - lehollandaisvolant.net_files/logo-no-border.png" alt="logo le hollandais volant"></a>
+	</div>
+	<a href="https://lehollandaisvolant.net/linux/">Linux</a>
+	<a href="https://lehollandaisvolant.net/tuto/">Tutoriels</a>
+	<a href="https://lehollandaisvolant.net/tout/">Divers</a>
+</nav>
+
+
+<div class="header">
+<h1>Optimiser les images pour le web</h1>
+</div>
+
+<div class="contenu">
+<div class="box">
+
+<ul id="toc"><li><a href="https://lehollandaisvolant.net/tuto/html.php#introduction">Brève introduction</a><ul><li><a href="https://lehollandaisvolant.net/tuto/html.php#whythis">Pourquoi cette page&nbsp;?</a></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#sohow">Alors comment accélérer ses pages&nbsp;?</a></li></ul></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p1">JPEG ou PNG (ou GIF) ?</a><ul><li><a href="https://lehollandaisvolant.net/tuto/html.php#p11">GIF et PNG : la différence</a></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p12">PNG ou JPEG ?</a></li></ul></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p2">Optimisation des JPEG</a><ul><li><a href="https://lehollandaisvolant.net/tuto/html.php#p21">En jouant sur la qualité (compression destructive)</a><ul><li><a href="https://lehollandaisvolant.net/tuto/html.php#p211">Régler la qualité avec The GIMP</a></li></ul></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p23">En supprimant les informations inutiles (non destructives)</a></li></ul></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p3">Optimisation des PNG</a><ul><li><a href="https://lehollandaisvolant.net/tuto/html.php#p30">Besoin de réduire les dimensions d’un PNG</a></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p31">Avec GIMP, lors de la création</a><ul><li><a href="https://lehollandaisvolant.net/tuto/html.php#p311">Comment faire ?</a></li></ul></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p32">Avec Pngnq</a><ul><li><a href="https://lehollandaisvolant.net/tuto/html.php#p321">Sous Linux :</a></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p322">Sous Windows :</a></li></ul></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p33">Avec Optipng :</a><ul><li><a href="https://lehollandaisvolant.net/tuto/html.php#p331">Sous Linux :</a></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p332">Sous Windows :</a></li></ul></li><li>Récapitulation</li></ul></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p3p1">Optimisation des SVG</a><ul><li><a href="https://lehollandaisvolant.net/tuto/html.php#p3p11">Suppression du code inutile avec Scour</a><ul><li><a href="https://lehollandaisvolant.net/tuto/html.php#p3p111">Utilisation :</a></li></ul></li></ul></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p4">Les captures d'écran.</a><ul><li><a href="https://lehollandaisvolant.net/tuto/html.php#p41">Le lissage sous pixel</a><ul><li><a href="https://lehollandaisvolant.net/tuto/html.php#p411">C'est quoi ça ?</a></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p412">Comment l'activer/ le désactiver ?</a></li></ul></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p42">L'ombre du pointeur de la souris</a></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p43">Le thème des fenêtres</a></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p44">Fond sur le bureau / fond d'écran</a></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#p45">La dimension des images</a></li><li>Récapitulation</li></ul></li><li><a href="https://lehollandaisvolant.net/tuto/html.php#conclusion">Conclusion</a><ul><li>Le choix du format</li><li>Les JPEG</li><li>Les PNG<ul><li>Cas des captures d'écran</li></ul></li><li>Les SVG</li></ul></li></ul>
+
+
+<h2 id="introduction">Brève introduction</h2>
+<h3 id="whythis">Pourquoi cette page&nbsp;?</h3>
+
+<p>Les pages trop lourde, c'est ennuyeux et on a tendance à les zapper. Quoi de plus con qu'une petite page avec une image de fond de 3Mo&nbsp;?</p>
+
+<p>Réduire la poids des pages web permet&nbsp;:</p>
+<ul>
+	<li>d'accélérer <strong>le chargement</strong> des pages pour les internautes</li>
+	<li>d'économiser <strong>de l'espace disque</strong> chez votre hébergeur si celui ci est limité</li>
+	<li>d'économiser <strong>de la bande passante</strong></li>
+</ul>
+
+<h3 id="sohow">Alors comment accélérer ses pages&nbsp;?</h3>
+<p>Il n'est <a href="https://lehollandaisvolant.net/tuto/pagespd/">pas évident</a> de gagner de la vitesse en optimisant le code html. En fait, l'optimisation du poids des pages se fait surtout sur <span style="font-weight: bold">les images</span> et les fichiers annexes (son, vidéo, scripts…).</p>
+<p>Je vous expliquerais ici <span style="font-weight: bold">comment réduire intelligemment le poids des images</span> sans perdre trop en qualité.</p>
+<div class="info"><p>Ce tutoriel utilise les logiciels <a href="http://pngnq.sourceforge.net/">Pngnq</a>, <a href="http://optipng.sourceforge.net/">Optipng</a> et <a href="http://freshmeat.net/projects/jpegoptim/">jpegoptim</a>. Ils sont disponibles gratuitement pour Windows (téléchargeable via le lien, à l'exception de jpegoptim) et Linux (via les dépôts des distributions). Ils fonctionnent en ligne de commande. Je ne parlerais ici que des commandes sous Linux (j'ajouterais Windows si je peux)</p>
+
+<p>Pour les images de type image/jpeg j'utilise <a href="http://www.gimp.org/">the GIMP</a> disponible gratuitement pour tous les systèmes.</p>
+
+<p>Sous Linux, si les logiciels cités ne sont pas installés, référez vous à la documentation de votre distribution pour les installer.</p></div>
+
+<div class="info"><div>Je me suis un peu inspiré de <a href="http://www.commentcamarche.net/faq/sujet-3770">cette astuce</a> pour créer ce tutoriel.</div></div>
+</div>
+
+
+
+
+<div class="box">
+<h2 id="p1">JPEG ou PNG (ou GIF) ?</h2>
+
+<p>Ce sont là 3 formats d'images différents qui ont tous leurs spécificités, leurs avantages et inconvénients.</p>
+<h3 id="p11">GIF et PNG : la différence</h3>
+
+<p><a href="http://www.commentcamarche.net/faq/sujet-3132">Jadis</a>, le format GIF était sous licence. Et le format libre PNG fut créé pour le remplacer. Aujourd'hui, le seul avantage du GIF, ce sont les images animés.</p>
+
+<p>Pour les images non-animés que l'on ferait traditionnellement en GIF, <b>c'est en PNG qu'il faut les enregistrer</b>.</p>
+
+<h3 id="p12">PNG ou JPEG ?</h3>
+<p>Je me suis inspiré de <a href="http://www.sebsauvage.net/html.html">la page</a> de Sebsauvage. Je vous laisse lire la section visant à choisir entre GIF/PNG ou JPEG.</p>
+
+<p>Là le choix à faire est bien plus important&nbsp;! En effet les algorithmes de compression sont différents et donc les types d'images visés aussi.<br>En gros, prenez&nbsp;:</p>
+<ul>
+	<li>le JPEG pour les photos.</li>
+	<li>le PNG pour les icônes et surtout pour les images contenant du texte (dont les captures d'écrans).</li>
+</ul>
+<p>Le PNG se compresse bien s'il y a de larges aplats de couleurs. Il affiche des jonctions de couleurs nettes(contrairement au JPEG, qui fait diffuser les couleurs (un avantage parfois).</p>
+<p>Bien sûr, prenez le PNG pour les images partiellement transparentes. Le JPEG ne prend pas de transparence.</p>
+<p class="go_to_sommaire"><a href="https://lehollandaisvolant.net/tuto/html.php#sommaire2">Sommaire</a></p>
+</div>
+
+<div class="box">
+<h2 id="p2">Optimisation des JPEG</h2>
+<h3 id="p21">En jouant sur la qualité (compression destructive)</h3>
+<p>Le plus souvent les logiciels permettent une compression «&nbsp;au pourcentage&nbsp;». Sachez qu'une image JPEG en qualité 100% prend énormément de place. Le simple fait de le réduire, ne serais-ce qu'à 95% peut parfois en réduire la taille de moitié, sans que cela ne se voit à l'écran.</p>
+
+<p>Voici un exemple sur une miniature du fond d'écran de Ubuntu 8.10&nbsp;: L'image mis en qualité 100% fait 80.2Kio. (Elle est <a href="https://lehollandaisvolant.net/tuto/html/ibex_100.jpg">là</a>.)</p>
+<table class="comp">
+	<tbody><tr>
+		<td style="vertical-align: bottom;"><img src="./Optimiser les images - lehollandaisvolant.net_files/ibex_95.jpg" alt="intrepid ibex" style="width: 400px;"></td>
+		<td style="vertical-align: bottom;"><img src="./Optimiser les images - lehollandaisvolant.net_files/ibex_52.jpg" alt="intrepid ibex" style="width: 400px;"></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;">Qualité : 95%&nbsp; -&nbsp; poids : 42.5Kio </td>
+		<td style="vertical-align: top; font-weight: bold; color: rgb(0, 136, 0);">Qualité : 52%&nbsp; -&nbsp; poids : 8.6Kio</td>
+	</tr>
+</tbody></table>
+<p>Ici, la différence entre les images en qualité 100 et 95 <span style="font-weight: bold">n'est pas visible</span>. Pourtant, <span style="font-weight: bold">le poids en est réduit de moitié</span>.</p>
+<p>On peut, à l'œil déterminer une valeur où la qualité commence à se détériorer. Pour cette image, c'est aux alentours de 50%.</p>
+<p>Pour cette image donc, une diminution de la qualité de 50% est peu visible mais le poids est divisé par 10.</p>
+
+<h4 id="p211">Régler la qualité avec The GIMP</h4>
+<p>Cela se passe lors de l'enregistrement de votre image. <br>
+Faites <span class="dred">Fichier</span> &gt;&nbsp;<span class="dred">enregistrer sous</span> puis enregistrez votre fichier au format Jpeg en sélectionnant&nbsp;<span class="dred">IMAGE Jpeg</span> dans la liste en bas.</p>
+<p>Ensuite, cliquez sur&nbsp;<span class="dred">enregistrer</span> en bas et la fenêtre ci-dessous apparait.<img class="centrerinline shadowed" src="./Optimiser les images - lehollandaisvolant.net_files/gimp_save.png" alt="enregistrer l&#39;image avec the GIMP"></p>
+<p>Cochez la case&nbsp;<span class="dred">Afficher l'aperçu dans la fenêtre d'image</span> et vous voyez votre image avec la qualité et la taille du fichier varier en temps réel avec le curseur. N'hésitez pas à tester.</p>
+<p>Quand vous avez trouvé la qualité qui vous convient bien, enregistrez l'image.</p>
+
+<h3 id="p23">En supprimant les informations inutiles (non destructives)</h3>
+<p>Pour cela, j'utilise le logiciel <b>jpegoptim</b>. Il n'est disponible que sous GNU/Linux (pour le moment&nbsp;?) et le gain de place est non-destructif.</p>
+<p>Pour l'utiliser, ouvrez un terminal et tapez&nbsp;:</p>
+<p class="code">jpegoptim *.jpg</p>
+
+<div class="tip"><div>Pour plus d'informations sur la compression des Jpeg : <a href="http://sebsauvage.net/comprendre/jpeg/index.html">sebsauvage.net/comprendre/jpeg/</a></div></div>
+<p class="go_to_sommaire"><a href="https://lehollandaisvolant.net/tuto/html.php#sommaire2">Sommaire</a></p>
+</div>
+<div class="box">
+<h2 id="p3">Optimisation des PNG</h2>
+
+<h3 id="p30">Besoin de réduire les dimensions d’un PNG</h3>
+
+<p>On l’a dit : les PNG sont bon pour les images qui ont de larges applats de couleurs, sans dégradés mais avec des jonctions nettes entre les applats.<br>
+L’ennuie c’est que quand vous réduisez la taille d’un PNG, vous utilisez une interpolation (par défaut dans GIMP, elle est cubique), il en résulte des dégradés et donc une augmentation du poids de l’image.</p>
+
+<p>Ce qu’il faut donc faire&nbsp;: conserver la taille du PNG d’origine, et au lieu de la réduire avec un éditeur d’image, utilisez le HTML/CSS pour faire ça (avec width/height).<br>
+Bien-sûr, essayez avant quand même de réduire les dimensions de l’image avec l’éditeur d’images pour voir si effectivement ça ne vaut pas la peine.</p>
+
+<p>Voilà un exemple très simple mais concret&nbsp;:</p>
+
+<table class="comp">
+	<tbody>
+		<tr>
+			<td style="vertical-align: bottom;"><img src="./Optimiser les images - lehollandaisvolant.net_files/small_small.png" alt="grande image légère" style="width: 242px; height: 155px;"> </td>
+			<td style="vertical-align: bottom;"><img src="./Optimiser les images - lehollandaisvolant.net_files/small_big.png" alt="petite image mais lourde" style="width: 242px; height: 155px;"> </td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top;">Image originelle réduite en HTML<br>poids : 1.2ko</td>
+			<td style="vertical-align: top;">Image réduite en dur<br> poids : 2.2ko</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>L’image réduite en dur (avec un logiciel de dessin) est près de 80% plus lourd qu’une l’image originale.<br>
+On observe le même genre de choses avec la plupart des images PNG très légères en grand mais qui prennent beaucoup plus de place une fois réduites, à cause des dégradés qui apparaissent.</p>
+
+<p>(<a href="https://lehollandaisvolant.net/?d=2012/11/24/20/37/08-css-faire-un-theme-mobile-avec-html5-et-responsive-design#id7ab7f0">merci à Nickko pour avoir soulevé le problème sur le blog</a>)</p>
+
+<h3 id="p31">Avec GIMP, lors de la création</h3>
+<p>Les fichiers PNG ont souvent <u>plusieurs millions de couleurs</u>, cependant, certaines nuances sont si proches les unes des autres qu'il est impossible de les distinguer à l'œil. On peut donc réduire le nombre de couleurs afin de gagner de la place&nbsp;: c'est la <span style="font-style: italic;">postérisation</span>.<br>
+Voici un exemple&nbsp;:</p>
+<table class="comp">
+	<tbody>
+		<tr>
+			<td style="vertical-align: bottom;"><img src="./Optimiser les images - lehollandaisvolant.net_files/hooh_6400_auto.png" alt="Ho-oh (6400 colors)" style="width: 240px; height: 247px;"> </td>
+			<td style="vertical-align: bottom;"><img src="./Optimiser les images - lehollandaisvolant.net_files/hooh_95_post7.png" alt="Ho-oh (95 colors)" style="width: 240px; height: 247px;"> </td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top;">Nombre de couleurs : 6 141&nbsp; -&nbsp; postérisation : aucune<br>poids : 54.2Kio</td>
+			<td style="vertical-align: top; font-weight: bold; color: rgb(0, 136, 0);">Nombre de couleurs : 95&nbsp; -&nbsp; postérisation : mis à 8<br> poids : 11.2Kio</td>
+		</tr>
+	</tbody>
+</table>
+<p>On peut voir les différences si on regarde bien mais vous conviendrez qu'elles sont petites… De toute façon, les différences se voient car on peut comparer.</p>
+<p>Si on avait qu'une seule des images, je ne saurais pas dire quelle image est la plus fidèle à cet oiseau (Ho-oh, un Pokémon).<br>
+<span style="font-weight: bold;">La différence visuelle est faible mais le poids est divisé par 5.</span></p>
+
+<h4 id="p311">Comment faire ?</h4>
+<p>Dans GIMP, votre image est ouverte.<br>
+Faites&nbsp;<span class="dred">Couleurs</span> &gt;&nbsp;<span class="dred">Postériser</span>. Une petite fenêtre s'ouvre&nbsp;:<img class="centrerinline shadowed" alt="gimp : posteriser" src="./Optimiser les images - lehollandaisvolant.net_files/gimp_poster.png">Utilisez le curseur pour régler le niveau de postérisation. Plus c'est haut, plus chaque couleur aura de nuances et plus il y aura de couleurs. Essayez de mettre des valeurs «&nbsp;puissances de 2&nbsp;» tels que 4, 8, 16, 32 voire même, si ça ne suffit pas, 64 ou 128.</p>
+<p>Il se peut que l'option postériser est grisée. Dans ce cas, les couleurs sont certainement déjà indexés, et donc l'image est déjà optimisé. La postérisation est donc inutile.</p>
+<p>Pour voir le nombre de couleurs d'une image (dans The GIMP toujours)&nbsp;: <span class="dred">Couleurs</span>&nbsp;&gt; <span class="dred">Informations</span>&nbsp;&gt; <span class="dred">analyse colorimétrique</span>&nbsp;:<br>
+<img class="shadowed centrerinline" alt="nombre de couleurs" src="./Optimiser les images - lehollandaisvolant.net_files/gimp_nbcolor.png"></p>
+
+<h3 id="p32">Avec Pngnq</h3>
+<p>Tout se fait en ligne de commandes très facilement.<br>
+Pngnq utilise une compression <span style="font-weight: bold;">destructive</span> des images. Cela signifie que la qualité des images est dégradée.</p>
+<p>Parfois, il faut mieux ne pas utiliser Pngnq mais juste optipng. C'est à vous de voir.<br>Utilisé seul, Pngnq permet de réduire la taille des fichier d'environ 50 ou 60%.</p>
+
+<h4 id="p321">Sous Linux :</h4>
+<p>Ouvrez un terminal et tapez :</p>
+<p class="code">pngnq <span style="font-style: italic;">mon_image.png</span></p>
+<p>Si vous avez un lot de fichiers à optimiser :</p>
+<p class="code">pngnq *.png</p>
+<p>Et si vous voulez voir ce que fait le logiciel (par curiosité^^)&nbsp;:
+</p><p class="code">pngnq -v *.png</p>
+<p>L'image optimisée se trouve dans le dossier source avec un nom terminant par&nbsp;<span class="dred">-nq8</span>.</p>
+
+<h4 id="p322">Sous Windows :</h4>
+<p>À venir</p>
+
+<h3 id="p33">Avec Optipng :</h3>
+<p>Optipng utilise une compression <span style="font-weight: bold;">non-destructive</span>. Le logiciel efface des informations inutiles des images et la qualité n'en est absolument pas altérée.</p>
+<p>En moyenne, on gagne entre 30% et 40% sur la taille des fichiers, et ce <u>sans perte de qualité</u>. Ce serait du gâchis de s'en priver n'est-ce pas&nbsp;?</p>
+<p>Voici ce que me donne un rapport optipng sur l'optimisation finale de 6 fichiers dans un dossier&nbsp;:</p>
+<pre>Output file size = 614151 bytes (7636 bytes = 1.23% decrease)
+Output file size = 385005 bytes (186669 bytes = 32.75% decrease)
+Output file size = 62529 bytes (31871 bytes = 33.76% decrease)
+Output file size = 204913 bytes (58259 bytes = 22.14% decrease)
+Output file size = 83622 bytes (14375 bytes = 14.67% decrease)
+Output file size = 272024 bytes (190089 bytes = 41.32% decrease)
+</pre>
+
+<h4 id="p331">Sous Linux :</h4>
+<p>Optipng possède plusieurs algorithmes d'optimisation. Pour qu'il effectue des tests et applique la meilleur, tapez simplement&nbsp;:</p>
+<p class="code">optipng <span style="font-style: italic;">mon_image.png</span></p>
+<p>De même que Pngnq, on peut optimiser les images par lot avec&nbsp;:</p>
+<p class="code">optipng *.pngL'image source est directement optimisée.</p>
+
+<h4 id="p332">Sous Windows :</h4>
+<p>Commencez par télécharger le logiciel (<a href="http://optipng.sourceforge.net/">ici</a>). Ensuite, décompressez le fichier zip où vous voulez. Je ferais comme si vous l'aviez mis sur le Bureau. Tout se fait en ligne de commandes&nbsp;:</p>
+<p>Ouvrez un terminal&nbsp;: <span class="toets">WIN</span>&nbsp;+&nbsp;<span class="toets">R</span> et tapez «&nbsp;cmd&nbsp;». Une fenêtre noire s'ouvre.</p>
+<p>Tapez&nbsp;:
+</p><p class="code">cd Bureau</p>
+<p>Imaginons que vous avez votre fichier «&nbsp;image.png&nbsp;» sur le bureau, il suffira de taper&nbsp;:</p>
+<p class="code">optipng image.png</p>
+<p>si vous avec plusieurs images png sur le bureau&nbsp;:</p>
+<p class="code">optipng *.png</p>
+<p>Les fichiers png d'origine seront optimisés.</p>
+<p class="go_to_sommaire"><a href="https://lehollandaisvolant.net/tuto/html.php#sommaire2">Sommaire</a></p>
+
+<h3>Récapitulation</h3>
+<ul>
+	<li><span style="font-weight: bold">The GIMP et la postérisation</span> pour diminuer le nombre de couleurs (destructive)</li>
+	<li><span style="font-weight: bold">Pngnq</span> pour réduire encore les couleurs en remplaçant les couleurs les moins utilisés par d'autres, assez proches et déjà présentes dans l'image. (destructive)</li>
+	<li><span style="font-weight: bold">Optipng</span> pour supprimer toutes les informations inutiles des fichiers. (non destructive)</li>
+</ul>
+<div class="danger"><div>Il faut utiliser Optipng en dernier.</div></div>
+<p style="font-weight: bold;">Optipng n'altère pas la qualité des images. Il est dommage de s'en priver&nbsp;!</p>
+<p class="go_to_sommaire"><a href="https://lehollandaisvolant.net/tuto/html.php#sommaire2">Sommaire</a></p>
+</div>
+
+<div class="box">
+<h2 id="p3p1">Optimisation des SVG</h2>
+<h3 id="p3p11">Suppression du code inutile avec Scour</h3>
+<p>En fait, ces images ne sont que du texte XML dans un fichier externe.</p>
+<p>Cela n'empêche pas qu'on peut les optimiser grandement. En effet, lors de la création avec des logiciels tel que Inkscape ou Adobe Ilustrator, ces logiciels remplissent la page avec du code totalement inutile du style «&nbsp;made with Inkscape&nbsp;».</p>
+<p>Le logiciel Scour (écrit en Python) permet justement de nettoyer le code SVG de tout le superflu. Le plus souvent, on gagne plus de 50% sur la taille du fichier.<br>
+(il m'est même arrivé de gagner 99,2% sur la taille du fichier, passant de 202 Kio à 1,6 Kio).</p>
+
+<h4 id="p3p111">Utilisation :</h4>
+<p>Une fois téléchargé sur <a href="http://www.codedread.com/scour/">sa page</a>, Scour se présente comme una archive Zip. Dézippez-là, puis rendez vous dans le dossier, et faites dans un terminal&nbsp;:</p>
+<p class="code">python ./scour.py -i input.svg -o output.svg</p>
+<p>L'image source est optimisée et se trouve en le fichier output.svgd.</p>
+</div>
+
+<div class="box">
+<h2 id="p4">Les captures d'écran.</h2>
+<p>Il m'arrive assez souvent de faire des captures d'écran pour mes tutoriels ou mes explications. Aussi, les 3 captures d'écran de ce tutoriels ne font que 13Kio au total.</p>
+<p>Évidement, elles ont été optimisé avec les 3 méthodes ci-dessus, mais je n'aurais jamais atteint de telles réductions si je n'avais effectué quelques réglages <span style="font-style: italic">avant</span> de prendre la capture.</p>
+<p>Voici ce qu'il faut savoir.</p>
+
+<h3 id="p41">Le lissage sous pixel</h3>
+<h4 id="p411">C'est quoi ça ?</h4>
+<p>Le lissage sous pixel est une fonction qui permet de lisser les polices d'écran sur les écrans plats. Je vous laisse lire <a href="http://www.commentcamarche.net/faq/sujet-5871">le tutoriel</a> très bien expliqué sur CCM.</p>
+<p>Comme vous voyez, cela améliore la lisibilité des polices, sans ce lissage la lecture sur les écrans plats serait très désagréable (il suffit de le désactiver pour s'en rendre compte).</p>
+<p>Comme vous pouvez le voir sur les images de l'explication, <u>le lissage ajoute des couleurs au texte en noir et blanc</u>. On augmente ainsi considérablement le nombre de couleurs… Voyez vous même&nbsp;: (les deux captures sont identiques et elles sont telles quels s'affichent à l'écran)&nbsp;:</p>
+<table class="comp">
+	<tbody>
+		<tr>
+			<td style="vertical-align: bottom;"><img src="./Optimiser les images - lehollandaisvolant.net_files/lissage_on.png" alt="lissage activée" style="width: 251px; height: 113px;" class="shadowed"> </td>
+			<td style="vertical-align: bottom;"><img src="./Optimiser les images - lehollandaisvolant.net_files/lissage_off.png" alt="Lissage désactivée" style="width: 251px; height: 113px;" class="shadowed"> </td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top;">Lissage : Activée&nbsp; -&nbsp; Nb de couleurs : <span style="color: red; font-weight: bold;">96</span><br>poids : 1 753 octets</td>
+			<td style="vertical-align: top; font-weight: bold; color: rgb(0, 136, 0);">Lissage : désactivée&nbsp; -&nbsp; Nb de couleurs : 6<br>poids : 929 octets</td>
+		</tr>
+	</tbody>
+</table>
+<p>Avec cet exemple le nombre de couleurs est <span style="font-weight: bold;">multiplié par 16</span> et le poids de l'image est doublé.</p>
+<p>Bien sûr, cet exemple est exagéré&nbsp;: le nombre de couleurs des captures sont réduites au minimum, ainsi sur une image normale, on ne peut gagner qu'entre 10% et 15% sur la taille finale du fichier. Si l'image est une petite capture (comme celles ici) on peut aller plus loin (entre 30% et 50%). C'est quand même pas mal</p>
+<p>En plus, je trouve l'image de droite plus nette et plus agréable à voir.</p>
+
+<h4 id="p412">Comment l'activer/ le désactiver ?</h4>
+<ul>
+	<li><span style="font-weight: bold;">Sous Windows (XP)</span> : clic droit sur le bureau &gt;&nbsp;<span class="dred">préférences</span> &gt; Onglet&nbsp;<span class="dred">Apparence</span> &gt; clic sur&nbsp;<span class="dred">Effet</span> en bas. Décocher la case&nbsp;<span class="dred">Utiliser la méthode suivant pour lisser les bords des polices d'écran</span>.<br>Appliquez puis fermez.<br>Pour le réactiver, re-cochez la case et remettez simplement&nbsp;<span class="dred">ClearType</span> dans le menu correspondant.</li>
+	<li><span style="font-weight: bold;">Sous Gnome</span> (Ubuntu) : clic droit sur le bureau &gt;&nbsp;<span class="dred">Changer l'arrière plan du bureau</span> &gt; onglet&nbsp;<span class="dred">Polices</span> &gt; cochez la case&nbsp;<span class="dred">Monochrome</span> dans la partie&nbsp;<span class="dred">Rendu<br></span>Pour le réactiver, remettez ce que vous aviez avant. Moi j'ai coché la case&nbsp;<span class="dred">Meilleur contraste</span> puis dans&nbsp;<span class="dred">effets</span>, j'ai coché&nbsp;<span class="dred">sous-pixel (LCD)</span> et&nbsp;<span class="dred">total</span> en bas. <div class="tip">Sous Ubuntu, la police par défaut mis avec un lissage sous pixel nul rend horriblement mal. Installez plutôt les polices libres “liberation”. Elles sont jolies, même sans lissage. (installez simplement le paquet <span style="font-weight: bold">ttf-liberation</span>&nbsp;; cliquez <a href="apt:ttf-liberation">là</a> sous Ubuntu </div></li>
+</ul>
+
+<h3 id="p42">L'ombre du pointeur de la souris</h3>
+<p>Là aussi. On peut gagner quelques octets (presque rien). L'ombre est un ajout de dégradés. Ce sont toujours une vingtaine de couleurs en moins dans l'image finale. Cependant, la postérisation se fait mieux est l'image résultant est plus nette si on désactive l'ombre.<br>Cela se passe dans les préférences de la souris&nbsp;:</p>
+<ul>
+	<li><span style="font-weight: bold;">Windows</span> : Démarrer &gt; Panneau de configuration &gt; Souris &gt; Onglet Pointeur &gt; décocher la case Activer l'ombre du pointeur.</li>
+</ul>
+<p>On peut aussi retirer les ombres dans les menus, et, lorsque l'on utilise des fenêtres transparentes (Windows 7 par exemple, ou certains thèmes sous Linux avec Emerald/Compiz), essayez de désactiver la transparence ou de mettre un fond uni (toujours dans le but de réduire le nombre de couleurs)</p>
+
+<h3 id="p43">Le thème des fenêtres</h3>
+<p>Très important ça&nbsp;!<br>Sur les deux dernières captures, j'ai pris le thème Windows classique&nbsp;: il y'a de gros aplats de couleurs et très peu de dégradés. C'est parfait pour le PNG, <u>mais c'est pas très joli</u>.<br>Je veux bien que nos pages ne sont pas faite pour être imprimés sur papier glacé, mais quand même…</p>
+<p>Dans ces cas là, je préfère utiliser le thème par défaut de Windows, mais j'applique alors une postérisation assez forte.</p>
+<p>Sous Ubuntu, c'est pareil. Certains thèmes sont mieux que d'autres. Certains pour l'esthétique et d'autres pour le poids de l'image. Il faut faire un compromis. J'aime bien Human&nbsp;: le résultat n'est pas trop mauvais.<br>Par exemple, les thèmes gris du pack Bisigi sont très jolies et les couleurs sont assez proches malgré les dégradés.</p>
+
+<h3 id="p44">Fond sur le bureau / fond d'écran</h3>
+<p>Lorsque l'on fait une capture d'écran du bureau, par exemple une capture de notre «&nbsp;menu démarrer&nbsp;». Il se peut que notre fond d'écran apparaisse. Si c'est pour montrer votre (bô) bureau, c'est parfait, mais si c'est pour focaliser l'attention sur le menu démarrer, le fond d'écran ne sert à rien. Mais il sera responsable de la lourdeur de votre image.</p>
+<p>Un exemple : voici la capture d'écran de mon menu dans Ubuntu. Le premier en gardant l'image en fond d'écran, le second en l'enlevant avec un logiciel de dessin :</p>
+
+<table class="comp">
+	<tbody>
+		<tr>
+			<td style="vertical-align: bottom;"><a href="./Optimiser les images - lehollandaisvolant.net_files/menu_avec_wall.png"><img src="./Optimiser les images - lehollandaisvolant.net_files/menu_avec_wall.png" alt="avec fond d&#39;écran" style="width: 268px; height: 262px;"></a></td>
+			<td style="vertical-align: bottom;"><a href="./Optimiser les images - lehollandaisvolant.net_files/menu_sans_wall.png"><img src="./Optimiser les images - lehollandaisvolant.net_files/menu_sans_wall.png" alt="sans fond d&#39;écran" style="width: 268px; height: 262px;"></a></td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top;">L'image possède plus de 5 000 couleurs et pèse 130 Kio.</td>
+			<td style="vertical-align: top; font-weight: bold; color: rgb(0, 136, 0);">L'image n'a plus que 2000 couleurs et ne pèse plus que 26Kio.<br>C'est 5 fois moins.</td>
+		</tr>
+	</tbody>
+</table>
+<p>L'effet n'en est que bénéfique pour le poids de la page web, mais aussi pour l'utilisateur&nbsp;: il ne sera pas distrait (m'enfin, je suis pas certain que ce dernier argument soit réellement convainquant&nbsp;!)</p>
+<p>Bon, si vraiment mettre la couleur unie sur votre belle capture vous donne des boutons, on peut pixeliser le fond&nbsp;: on réduit aussi énormément le poids de la page. <a href="https://lehollandaisvolant.net/ubuntu/il2/9.png">Voici un exemple</a>.</p>
+
+<h3 id="p45">La dimension des images</h3>
+<p>Si vous voulez faire une capture d’écran PNG en plus petit, il est bien souvent préférable d’utiliser l’image dans ses dimensions d’origine et de la réduire en HTML/CSS plutôt que de réduire l’image avec The Gimp ou avec Paint.</p>
+
+<p>(Voir au point 4.1.)</p>
+
+
+<h3>Récapitulation</h3>
+<p>Donc, pour une bonne capture d'écran, qui puisse bien s'optimiser par la suite&nbsp;:</p>
+<ul>
+	<li><span style="font-weight: bold;">Désactivez le lissage</span> des polices d'écran.</li>
+	<li><span style="font-weight: bold;">Enlevez les ombres</span> (pointeur de la souris, menus…)</li>
+	<li>Prenez un <span style="font-weight: bold;">thème de fenêtre assez sobre</span> (pas trop de couleurs, ni trop de nuances)</li>
+	<li><span style="font-weight: bold;">Effacez le fond d'écran de votre image</span> et remplacez le par une couleur unie.</li>
+	<li><span style="font-weight: bold;">Ne redimentionnez pas les images en dur</span> mais faites le en HTML ou en CSS.</li>
+	<li>Et toujours Optipng et Pngnq pour optimiser le tout&nbsp;!</li>
+</ul>
+<p class="go_to_sommaire"><a href="https://lehollandaisvolant.net/tuto/html.php#sommaire2">Sommaire</a></p>
+</div>
+<!-- End div .box -->
+
+
+<div class="box">
+<h2 id="conclusion">Conclusion</h2>
+<p>Bon… Je crois qu'il est temps de conclure&nbsp;! Je pense avoir tout dit. Je rajouterais des trucs si j'en trouve.<br>Voilà un bref résumé&nbsp;:</p>
+<h3>Le choix du format</h3>
+<ul>
+	<li>Choisissez le <span style="font-weight: bold">JPEG pour les photos</span>. Le Jpeg est aussi un très bon choix pour le fond des pages web.</li>
+	<li>Utilisez au contraire le <span style="font-weight: bold">PNG pour les icones</span>, images sans dégradés, en noir et blanc ou les <span style="font-weight: bold">captures d'écrans.</span></li>
+</ul>
+
+<h3>Les JPEG</h3>
+<ul>
+	<li>Pour optimiser les JPEG, on utilise <span style="font-weight: bold">la compression destructive</span> de ce dernier. Essayez <i>toujours</i> de les compresser&nbsp;: une compression de seulement 5% peut réduire la taille du fichier de l'image de moitié&nbsp;!<br>
+Une compression intelligente (arrêter quand la qualité se dégrade trop) peut réduire la taille du fichier de <span style="font-weight: bold">80% et parfois plus&nbsp;!</span></li>
+</ul>
+
+<h3>Les PNG</h3>
+<ul>
+	<li>Dans les éditeurs d'images (comme The GIMP)&nbsp;: utilisez la <span style="font-weight: bold">postérisation</span> pour réduire le nombre de nuances sur les canaux de couleurs (RVB). Là aussi, le niveau de postérisation se fait à vue.</li>
+	<li>Avec <span style="font-weight: bold">Pngnq</span>, on peut réduire encore le nombre de couleurs et le <span style="font-weight: bold">gain de place est impressionnant</span> (mais la qualité est parfois réduite un peu trop). C'est une <span style="font-weight: bold">compression destructive</span>.</li>
+	<li>Enfin, avec <span style="font-weight: bold">Optipng</span>&nbsp;: effacez toutes les <span style="font-weight: bold">informations inutiles</span> de vos images et gagner pas mal de place. (en moyenne 20~30%)<br>Optipng utilise une compression <span style="font-weight: bold">non-destructive</span>. La place gagnée (et la bande passante) est <span style="font-weight: bold">gratuite</span>&nbsp;! Profitez-en&nbsp;!</li>
+</ul>
+
+<h4>Cas des captures d'écran</h4>
+<ul>
+	<li>Désactivez le <span style="font-weight: bold">lissage</span> sous pixel,</li>
+	<li>Désactivez <span style="font-weight: bold">les ombres</span> du pointeur de la souris, des menus, des fenêtres. Dans la mesure du possible, évitez les fenêtres transparentes.</li>
+	<li>Choisissez un thème de fenêtre sans trop de dégradés et de transparence de toutes les couleurs.</li>
+	<li>Si votre image contient un morceau de votre <span style="font-weight: bold">fond d'écran</span>, à moins que ce soit voulu, <span style="font-weight: bold">effacez</span> ce fond avec un éditeur d'image et remplacez-le par une couleur uni. Ou alors prenez un fond d'écran avec peu de couleurs.</li>
+</ul>
+
+<h3>Les SVG</h3>
+<ul>
+	<li>Comme il ne s'agit dans ces "images" que de code XML, il faut qu'il soit <b>valide W3C</b>.</li>
+	<li>Pour réduire le poids du fichier, on doit aussi <b>supprimer tout le code inutile</b> qu'il contient (commentaires, balises automatiques des logiciels éditeurs…)</li>
+	<li>Lors de la déclaration des <b>coordonnées</b> des figures SVG, il est inutile de spécifier des coordonnées avec 10 chiffres après la virgule&nbsp;: l'écran est divisé en pixels et il n'est pas possible d'afficher un point entre deux pixels…<br>
+Corriger ça permet déjà de gagner pas mal de place…</li>
+</ul>
+
+<p>Un seul mot d'ordre&nbsp;: <span style="font-weight: bold">réduire le nombre de couleurs</span> pour réduire le poids de l'image.</p>
+
+<p class="go_to_sommaire"><a href="https://lehollandaisvolant.net/tuto/html.php#sommaire2">Sommaire</a></p>
+</div><!-- End div .box -->
+
+</div><!-- End div .contenu -->
+
+<div class="box"><p class="small">Page créée en octobre 2009 — mise à jour le mardi 27 novembre 2012<br>
+Adresse de la page : https://lehollandaisvolant.net/tuto/html.php</p></div>
+
+
+<div class="foot_main">
+   <script>
+   'use strict'
+var TOC = document.getElementById('toc');
+var listTags = TOC.dataset.tocLv || 'h2, h3, h4, h5, h6';
+var headings = document.querySelectorAll(listTags);
+
+var parentLevel = 2;
+var cursorNode = TOC;
+
+for (var i = 0, len = headings.length ; i < len ; ++i) {
+	var currentHeading = headings[i];
+	var newLevel = parseInt(currentHeading.tagName.substr(1,1));
+	var diff = newLevel - parentLevel;
+
+	if (diff > 0) {
+		var containerLiNode = cursorNode.lastChild;
+		var ulNode = document.createElement('UL')
+		containerLiNode.appendChild(ulNode);
+		cursorNode = ulNode;
+		parentLevel = newLevel;		
+	}
+
+	if (diff < 0) {
+		while (0 !== diff++) {
+			cursorNode = cursorNode.parentNode.parentNode;
+		}
+		parentLevel = newLevel;
+	}
+
+	var liNode = document.createElement('LI');
+	if (currentHeading.hasAttribute('id')) {
+		var link = document.createElement('A');
+		link.setAttribute('href', '#' + currentHeading.getAttribute('id'));
+		link.appendChild(document.createTextNode(currentHeading.textContent))
+		liNode.appendChild(link);
+	} else {
+		liNode.appendChild(document.createTextNode(currentHeading.textContent));
+	}
+
+	cursorNode.appendChild(liNode);
+
+}
+   </script>
+
+<div class="footer">
+	<div class="footerc foot">
+		<a href="https://lehollandaisvolant.net/contact">Timo Van Neerden</a>
+		&nbsp; &nbsp;-&nbsp; &nbsp;<a href="https://lehollandaisvolant.net/">lehollandaisvolant.net</a>
+	</div>
+</div>
+</div>
+
+</body></html>
